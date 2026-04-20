@@ -1,0 +1,236 @@
+.dashboard {
+  margin: 3rem;
+}
+
+.dashboard-hero {
+  text-align: center;
+  margin: var(--space-lg) 0;
+  padding: 4.5rem 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.grade {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.stats-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  padding: 2rem;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.stats-number {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  margin-top: 1.25rem;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  margin-bottom: var(--space-lg);
+  box-shadow: var(--shadow);
+}
+
+.glass-card h2 {
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.activity {
+  padding: 1.25rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.25s ease;
+  border-left: 4px solid transparent;
+  cursor: pointer;
+}
+
+.activity:hover {
+  transform: translateX(4px);
+}
+
+.activity strong {
+  color: var(--text-primary);
+}
+
+.activity span {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.activity.success {
+  border-left-color: var(--success);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.activity.warning {
+  border-left-color: var(--warning);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.activity.info {
+  border-left-color: var(--info);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-md);
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.table thead {
+  background: var(--primary-gradient);
+  color: #fff;
+}
+
+.table th,
+.table td {
+  padding: 1.25rem 2rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.12);
+}
+
+.row-index {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.subject-name {
+  font-weight: 600;
+}
+
+.attendance-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.attendance-text {
+  font-weight: 600;
+}
+
+.mini-progress {
+  height: 7px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mini-fill {
+  height: 100%;
+  background: var(--primary-gradient);
+  transition: width 0.5s ease;
+}
+
+.status {
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.status.excellent {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success);
+}
+
+.status.good {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--warning);
+}
+
+.status.needs {
+  background: rgba(239, 68, 68, 0.2);
+  color: var(--danger);
+}
+
+@media (max-width: 1024px) {
+  .stats-grid,
+  .activity-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

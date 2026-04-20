@@ -1,0 +1,110 @@
+.Ass-grid {
+  margin: 3rem ;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.Ass-column {
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  border-top: 5px solid transparent;
+}
+
+.Ass-column.todo {
+  border-color: var(--danger);
+}
+
+.Ass-column.progress {
+  border-color: var(--warning);
+}
+
+.Ass-column.done {
+  border-color: var(--success);
+}
+
+.Ass-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.Ass-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.Ass-count {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.Ass-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.assignment-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.assignment-card h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.assignment-card p {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  flex: 1;
+  padding: 0.55rem;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.actions button:hover:not(:disabled) {
+  background: var(--accent-gradient);
+  color: #fff;
+}
+
+.actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.Ass-list:empty::after {
+  content: "No assignments";
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}
